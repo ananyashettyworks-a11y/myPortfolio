@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananya B Shetty | Portfolio</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        /* Professional Color Scheme */
+        :root {
+            --primary-color: #02afbf;
+            --secondary-color: #028a98;
+            --accent-color: #0d7a87;
+            --light-bg: #f8f9fa;
+            --card-shadow: 0 10px 30px rgba(2, 175, 191, 0.15);
+            --text-dark: #2c3e50;
+            --text-light: #555;
+        }
+
+        /* Animated Gradient Background */
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+            background-size: 600% 600%;
+            animation: gradientAnimation 15s ease infinite;
+            cursor: none;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Keyframes for Background Animation */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 136, 204, 0.7); /* Customize color */
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.15s ease, width 0.15s ease, height 0.15s ease;
+    z-index: 9999;
+    mix-blend-mode: difference; /* Adds a contrast effect */
+}
+
+/* Scale up the cursor on hover over interactive elements */
+a:hover ~ .custom-cursor, 
+button:hover ~ .custom-cursor {
+    transform: scale(1.5);
+    background-color: rgba(4, 2, 0, 0.8); /* Optional color change */
+    width: 25px;
+    height: 25px;
+}
+        /* Header Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-pic {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .profile-pic img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 20px 50px rgba(2, 175, 191, 0.4);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-pic img:hover {
+            transform: scale(1.08) translateY(-10px);
+            box-shadow: 0 30px 60px rgba(2, 175, 191, 0.5);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header h3 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-top: 0.8rem;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sections */
+        section h2 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            position: relative;
+            padding-bottom: 1rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), transparent);
+            border-radius: 2px;
+        }
+               
+
+        /* Card Style */
+        .card {
+            background: linear-gradient(135deg, #ffffff 0%, #f0fafa 100%);
+            color: var(--text-dark);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, background 0.3s ease;
+            text-align: left;
+            margin: 1rem;
+            max-width: 420px;
+            overflow: hidden;
+            border: 1px solid rgba(2, 175, 191, 0.1);
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 15px 15px 0 0;
+        }
+
+        .card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(2, 175, 191, 0.25);
+            background: linear-gradient(135deg, #ffffff 0%, #e8feff 100%);
+        }
+
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+  
+/* Card Style for Consistency */
+
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+        /* About Me Content */
+        .about-content p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+        #about .about-card {
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Optional: limits the width */
+    margin: 0 auto; /* Center the card */
+}
+
+#about .about-content p {
+    color: black; /* Ensure text is visible on the white background */
+}
+
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #2c3e50, #1a252f);
+            color: #ffffff;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(2, 175, 191, 0.2);
+            letter-spacing: 0.3px;
+        }
+
+        /* Smooth Scroll Animation */
+        .hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Skills Table */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem auto;
+            box-shadow: var(--card-shadow);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .skills-table th,
+        .skills-table td {
+            padding: 1.3rem 1.5rem;
+            text-align: left;
+            font-size: 1.05rem;
+            color: white;
+            /* color: var(--text-dark); */
+        }
+
+        .skills-table th {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .skills-table tr {
+            border-bottom: 1px solid rgba(2, 175, 191, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        .skills-table tr:nth-child(even) {
+            background-color: rgba(2, 175, 191, 0.05);
+        }
+
+        .skills-table tr:hover {
+            background-color: rgba(135, 217, 224, 0.15);
+            color: var(--text-dark);
+        }
+
+        .skills-table tr:last-child {
+            border-bottom: none;
+        }
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+ul li {
+    margin: 0.8rem 0;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+
+section {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+            position: relative;
+        }
+        .slide-in-left {
+            transform: translateX(-50px);
+        }
+
+        .slide-in-right {
+            transform: translateX(50px);
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section.visible.slide-in-left {
+            transform: translateX(0);
+        }
+
+        section.visible.slide-in-right {
+            transform: translateX(0);
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures video covers the entire screen */
+            z-index: -1;
+        }
+        header, footer,  h1, h2 {
+    color: #ffffff !important;
+}
+.card ul {
+    color: black;
+}
+
+        /* Enhanced Profile Summary Section */
+        #about .about-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f5feff 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(2, 175, 191, 0.2);
+            max-width: 950px;
+            margin: 2rem auto;
+            border-left: 6px solid var(--primary-color);
+            position: relative;
+            font-family: 'Poppins', Arial, sans-serif;
+            transition: all 0.4s ease;
+        }
+
+        #about .about-card:hover {
+            box-shadow: 0 25px 80px rgba(2, 175, 191, 0.3);
+            transform: translateY(-5px);
+        }
+
+        #about .about-content {
+            position: relative;
+        }
+
+        #about .about-content > p:first-child {
+            font-size: 1.25rem;
+            line-height: 2;
+            color: var(--text-dark);
+            margin-bottom: 2.5rem;
+            font-style: italic;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(2, 175, 191, 0.08), rgba(2, 175, 191, 0.03));
+            border-radius: 12px;
+            border-left: 6px solid var(--primary-color);
+            box-shadow: inset 0 0 20px rgba(2, 175, 191, 0.05);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        #about .about-content > p:first-child:hover {
+            background: linear-gradient(135deg, rgba(2, 175, 191, 0.12), rgba(2, 175, 191, 0.06));
+            transform: translateX(5px);
+        }
+
+        #about .about-content h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 1rem;
+            cursor: default;
+            transition: all 0.3s ease;
+        }
+
+        #about .about-content h3:hover {
+            color: var(--secondary-color);
+            transform: translateX(8px);
+        }
+
+        #about .about-content h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 3px;
+            transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        #about .about-content h3:hover:after {
+            width: 100px;
+        }
+
+        #about .about-content ul {
+            margin-left: 0;
+            margin-bottom: 2rem;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #about .about-content ul li {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.9;
+            position: relative;
+            padding-left: 30px;
+            font-size: 1.05rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        #about .about-content ul li:hover {
+            color: var(--primary-color);
+            transform: translateX(8px);
+        }
+
+        #about .about-content ul li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 8px rgba(2, 175, 191, 0.5);
+        }
+
+        #about .about-content ul li:hover:before {
+            background: var(--secondary-color);
+            transform: scale(1.3);
+        }
+
+        #about .about-content p {
+            color: var(--text-light);
+            line-height: 1.95;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            font-size: 1.05rem;
+            font-weight: 400;
+            letter-spacing: 0.4px;
+        }
+
+        #about .about-content strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .card h3, .card h4 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .card:hover h3,
+        .card:hover h4 {
+            color: var(--secondary-color);
+        }
+
+        /* Contact Links */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            position: relative;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        /* Images in certifications section */
+        img {
+            border-radius: 12px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 10px 30px rgba(2, 175, 191, 0.15);
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(2, 175, 191, 0.25);
+        }
+
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            section {
+                padding: 3rem 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            header h3 {
+                font-size: 1.1rem;
+            }
+
+            .card {
+                max-width: 100%;
+                margin: 1rem 0;
+            }
+
+            .skills-table th,
+            .skills-table td {
+                padding: 0.8rem;
+                font-size: 0.95rem;
+            }
+
+            #about .about-card {
+                padding: 2rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <video class="video-background" autoplay loop muted>
+        <source src="backgroundvid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <!-- Header Section with Profile Picture -->
+    <header>
+        <div class="profile-pic">
+            <img src="profile.png" alt="Ananya B Shetty Profile Picture" style="border: #000000;">
+        </div>
+        <h1 style="font-size: 50px;">Ananya B Shetty</h1>
+        <h3>Web Developer | Data Analyst | Project Manager | Enthusiast Learner</h3>
+    </header>
+
+        <!-- Resume Section -->
+    <section id="resume" class="hidden slide-in-left">
+        <h2 class="interactive">Resume</h2>
+        <div class="card-grid" style="flex-direction: column; align-items: center; gap: 2rem;">
+            <div class="card" style="max-width: 800px; text-align: center; width: 100%;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Download My Resume</h3>
+                <p style="color: var(--text-dark); margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Download my complete professional resume in PDF format. My resume includes my education, technical skills, professional experience, certifications, and key achievements.
+                </p>
+                <a href="AnanyaShetty_RESUME.pdf" download="AnanyaShetty_RESUME.pdf" style="display: inline-block; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border-radius: 12px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; text-decoration: none; box-shadow: 0 10px 30px rgba(2, 175, 191, 0.3);">
+                    📥 Download Resume (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+     
+    <section id="about" class="hidden slide-in-left">
+        <h2 class="interactive">Profile Summary</h2>
+        <div class="about-card">
+<div class="about-content">
+                    <p>Final-year Engineering student with strong hands-on experience in Core Java, Web Development (HTML, CSS, JavaScript), and Oracle SQL and Python Automation. Skilled in designing responsive web applications and managing cross-functional projects. Recognized for attention to detail, problem-solving skills, and the ability to collaborate in fast-paced environments. Eager to contribute technical and project management expertise to software and development teams.</p>
+</div>
+<div class="about-content">
+                    <h3>PROJECTS</h3>
+                    <p><strong>Student Database Management System (Major Project)</strong> - A web-based system designed for efficient student record management with secure database integration. Features include role-based access, a clean UI, and integration with cloud storage for data security.</p>
+                    <p style="margin-bottom: 1.5rem;">
+                        <strong style="color: var(--primary-color);">Tech Stack:</strong> 
+                        <span style="display: inline-block; padding: 0.4rem 0.8rem; background: rgba(2, 175, 191, 0.15); border-left: 3px solid var(--primary-color); border-radius: 6px; margin: 0.25rem 0.5rem 0.25rem 0; font-size: 0.95rem; color: var(--primary-color); font-weight: 600;">Python</span>
+                        <span style="display: inline-block; padding: 0.4rem 0.8rem; background: rgba(2, 175, 191, 0.15); border-left: 3px solid var(--primary-color); border-radius: 6px; margin: 0.25rem 0.5rem 0.25rem 0; font-size: 0.95rem; color: var(--primary-color); font-weight: 600;">Flask</span>
+                        <span style="display: inline-block; padding: 0.4rem 0.8rem; background: rgba(2, 175, 191, 0.15); border-left: 3px solid var(--primary-color); border-radius: 6px; margin: 0.25rem 0.5rem 0.25rem 0; font-size: 0.95rem; color: var(--primary-color); font-weight: 600;">SQL Alchemy</span>
+                        <span style="display: inline-block; padding: 0.4rem 0.8rem; background: rgba(2, 175, 191, 0.15); border-left: 3px solid var(--primary-color); border-radius: 6px; margin: 0.25rem 0.5rem 0.25rem 0; font-size: 0.95rem; color: var(--primary-color); font-weight: 600;">HTML</span>
+                        <span style="display: inline-block; padding: 0.4rem 0.8rem; background: rgba(2, 175, 191, 0.15); border-left: 3px solid var(--primary-color); border-radius: 6px; margin: 0.25rem 0.5rem 0.25rem 0; font-size: 0.95rem; color: var(--primary-color); font-weight: 600;">CSS</span>
+                    </p>
+                    <p><strong>Educational Website (Internship Project)</strong> - A structured website (frontend) offering categorized study materials and quizzes for students, enhancing online learning. Developed an educational website offering 10+ categorized study materials and interactive quizzes, improving user engagement for school students. Integrated interactive features such as downloadable PDFs and topic-based assessments.</p>
+                    <p style="margin-bottom: 1.5rem;">
+                        <strong style="color: var(--primary-color);">Tech Stack:</strong> 
+                        <span style="display: inline-block; padding: 0.4rem 0.8rem; background: rgba(2, 175, 191, 0.15); border-left: 3px solid var(--primary-color); border-radius: 6px; margin: 0.25rem 0.5rem 0.25rem 0; font-size: 0.95rem; color: var(--primary-color); font-weight: 600;">HTML</span>
+                        <span style="display: inline-block; padding: 0.4rem 0.8rem; background: rgba(2, 175, 191, 0.15); border-left: 3px solid var(--primary-color); border-radius: 6px; margin: 0.25rem 0.5rem 0.25rem 0; font-size: 0.95rem; color: var(--primary-color); font-weight: 600;">CSS</span>
+                        <span style="display: inline-block; padding: 0.4rem 0.8rem; background: rgba(2, 175, 191, 0.15); border-left: 3px solid var(--primary-color); border-radius: 6px; margin: 0.25rem 0.5rem 0.25rem 0; font-size: 0.95rem; color: var(--primary-color); font-weight: 600;">JavaScript</span>
+                        <span style="display: inline-block; padding: 0.4rem 0.8rem; background: rgba(2, 175, 191, 0.15); border-left: 3px solid var(--primary-color); border-radius: 6px; margin: 0.25rem 0.5rem 0.25rem 0; font-size: 0.95rem; color: var(--primary-color); font-weight: 600;">Bootstrap</span>
+                    </p>
+                    <p><strong>AI-Powered Symptom Checker (Hackathon Project)</strong> - An AI-driven chatbot that provides preliminary medical diagnosis based on user-input symptoms. Developed an AI-powered chatbot that processes symptoms provided by users and gives preliminary diagnosis suggestions. Utilized machine learning models trained on healthcare datasets to analyze symptoms and provide relevant health insights.</p>
+                    <p style="margin-bottom: 1.5rem;">
+                        <strong style="color: var(--primary-color);">Tech Stack:</strong> 
+                        <span style="display: inline-block; padding: 0.4rem 0.8rem; background: rgba(2, 175, 191, 0.15); border-left: 3px solid var(--primary-color); border-radius: 6px; margin: 0.25rem 0.5rem 0.25rem 0; font-size: 0.95rem; color: var(--primary-color); font-weight: 600;">Python</span>
+                        <span style="display: inline-block; padding: 0.4rem 0.8rem; background: rgba(2, 175, 191, 0.15); border-left: 3px solid var(--primary-color); border-radius: 6px; margin: 0.25rem 0.5rem 0.25rem 0; font-size: 0.95rem; color: var(--primary-color); font-weight: 600;">NLP</span>
+                        <span style="display: inline-block; padding: 0.4rem 0.8rem; background: rgba(2, 175, 191, 0.15); border-left: 3px solid var(--primary-color); border-radius: 6px; margin: 0.25rem 0.5rem 0.25rem 0; font-size: 0.95rem; color: var(--primary-color); font-weight: 600;">Flask</span>
+                        <span style="display: inline-block; padding: 0.4rem 0.8rem; background: rgba(2, 175, 191, 0.15); border-left: 3px solid var(--primary-color); border-radius: 6px; margin: 0.25rem 0.5rem 0.25rem 0; font-size: 0.95rem; color: var(--primary-color); font-weight: 600;">Google Gemini</span>
+                        <span style="display: inline-block; padding: 0.4rem 0.8rem; background: rgba(2, 175, 191, 0.15); border-left: 3px solid var(--primary-color); border-radius: 6px; margin: 0.25rem 0.5rem 0.25rem 0; font-size: 0.95rem; color: var(--primary-color); font-weight: 600;">CORS</span>
+                    </p>
+                </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="hidden slide-in-right">
+        <h2 class="interactive">Skills</h2>
+        <table class="skills-table">
+            <tr>
+                <th>DOMAIN</th>
+                <th>SKILLS</th>
+            </tr>
+            <tr>
+                <td>Frontend Development</td>
+                <td>HTML, CSS, JavaScript, Bootstrap</td>
+            </tr>
+            <tr>
+                <td style=" color: rgb(255, 255, 255);">Version Control and Collaboration</td>
+                <td style=" color: rgb(255, 255, 255);">GitHub</td>
+            </tr>
+            <tr>
+                <td>Programming Languages</td>
+                <td>Python, C, Core Java</td>
+            </tr>
+            <tr>
+                <td style=" color: rgb(255, 255, 255);">Database & Data Engineering</td>
+                <td style=" color: rgb(255, 255, 255);">Oracle SQL, Azure Databricks, DBT, ETL Pipelines, Data Preprocessing, Data Validation, SQL Query Optimization, RLHF Dataset Workflows</td>
+            </tr>
+            <tr>
+                <td>Tools & Technologies</td>
+                <td>Python Automation, Excel (Advanced), Flask (Basic), Pandas, Jupyter Notebook</td>
+            </tr>
+            <tr>
+                <td style=" color: rgb(255, 255, 255);">Embedded Systems</td>
+                <td style=" color: rgb(255, 255, 255);">Arduino UNO, ESP-32, MATLAB</td>
+            </tr>
+            <tr>
+                <td>Areas of Interest</td>
+                <td>Data Analytics, Software Development (SDE), Web Development, Project Management, AI/LLM Data Operations</td>
+            </tr>
+            <tr>
+                <td style=" color: rgb(255, 255, 255);">Soft Skills</td>
+                <td style=" color: rgb(255, 255, 255);">Leadership, Communication, Project Management, Team Collaboration, Attention to Detail, Problem Solving, Adaptability, Self-Learning, Presentation, Time Management</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="education" class="hidden slide-in-left">
+        <h2 class="interactive">Education Background</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h4>Undergraduate College</h4>
+                <p>B.E. in Electronics and Communication Engineering</p>
+                <p style="font-weight: 700; color: var(--primary-color);">CGPA: 8.64</p>
+            </div>
+            <div class="card">
+                <h4>PU College</h4>
+                <p>PCMB, SSMRV PU College</p>
+                <p style="font-weight: 700; color: var(--primary-color);">Percentage: 93.5%</p>
+            </div>
+            <div class="card">
+                <h4>School</h4>
+                <p>ICSE, Aradhana Academy</p>
+                <p style="font-weight: 700; color: var(--primary-color);">Percentage: 87%</p>
+            </div>
+        </div>
+    </section>
+    
+     <!-- Languages Known Section -->
+<section id="languages" class="hidden slide-in-right">
+    <h2 class="interactive">Languages Known</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h4>English</h4>
+            <p>Fluent</p>
+            
+        </div>
+        <div class="card">
+            <h4>Hindi</h4>
+            <p>Fluent</p>
+            
+        </div>
+        <div class="card">
+            <h4>Kannada</h4>
+            <p>Native</p>
+           
+        </div>
+        <div class="card">
+            <h4>Tulu</h4>
+            <p>Native</p>
+           
+        </div>
+    </div>
+</section>
+<section id="internships" class="hidden slide-in-left">
+    <h2 class="interactive">Internships</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3 style="color: black;">Skypoint AI</h3>
+            <p><strong>AI Data Curation and RLHF Intern</strong></p>
+            <p><strong>07/2025 - 11/2025</strong></p>
+            <p>Engaged in data collection, curation, and labeling to support AI model training. Performed extensive Quality Checks (QC) and Data Validation on structured and semi-structured healthcare datasets. Developed DBT (Data Build Tool) models for healthcare benefits data including staging, cleaning, and transformations. Wrote and optimized SQL queries for profiling, cleaning, and validating sensitive healthcare data. Worked with Azure Databricks to preprocess large volumes of data using Python and SQL. Contributed to RLHF pipelines by curating datasets for AI/LLM model training with focus on label correctness and annotation consistency. Automated validation tasks using Python scripts, improving QC efficiency for the data engineering team.</p>
+        </div>
+        <div class="card">
+            <h3 style="color: black;">PygenicArc</h3>
+            <p><strong>Frontend Developer Intern</strong></p>
+            <p><strong>10/2023 - 11/2023</strong></p>
+            <p>Gained hands-on experience in Frontend web development, using HTML, CSS, and JavaScript and developed an educational website that provides study materials for school students. Also got selected as the Student Intern for the company. Worked on enhancing the website’s UI/UX and integrating additional learning resources.</p>
+        </div>
+        <div class="card">
+            <h3 style="color: black;">E-cell, IIT-Bombay</h3>
+            <p><strong>Campus Ambassador</strong></p>
+            <p><strong>07/2024 - 01/2025 </strong></p>
+            <p>As a Campus Ambassador for E-cell, IIT-Bombay, I actively promote entrepreneurship initiatives on my campus, connecting students with resources, workshops, and events that foster innovation and leadership skills.</p>
+        </div>
+        <div class="card">
+            <h3 style="color: black;">Python Development Intern at Pinnacle Labs</h3>
+            <p><strong>07/2024 - 08/2024</strong></p>
+            <p>During the course, completed key projects such as an alarm program with customizable tones and snooze options, a monthly calendar app that allows reminder management, and a quiz platform with customizable quizzes and scoring features.</p>
+        </div>
+        <div class="card">
+            <h3 style="color: black;">Project Management Intern at RitikaYourHealth Coach</h3>
+            <p><strong>08/2024 - Present</strong></p>
+            <p>Assisted in quality checking and issue tracking for a website under development, coordinated with the development team to resolve bugs and UI/UX issues, and helped with social media strategies, content planning, and project timelines.</p>
+        </div>
+    </div>
+</section>
+
+<section id="experiences" class="hidden slide-in-right">
+     <h2 class="interactive">EXPERIENCES</h2>
+    <div class="card-grid">
+        <div class="card" style="width: 100%; max-width: none;">
+            <h3>AI Data Curation and RLHF Intern</h3>
+            <p style="color: var(--primary-color); font-weight: 700; margin-bottom: 1rem;">Skypoint AI</p>
+            <p><strong>Key Responsibilities:</strong></p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li>Data collection, curation, and labeling to support AI model training</li>
+                <li>Performed extensive Quality Checks (QC) and Data Validation on healthcare datasets</li>
+                <li>Developed DBT (Data Build Tool) models for healthcare benefits data with staging, cleaning, and transformations</li>
+                <li>Wrote and optimized SQL queries for profiling, cleaning, and validating sensitive healthcare data</li>
+                <li>Worked with Azure Databricks to preprocess large data volumes using Python and SQL</li>
+                <li>Contributed to RLHF pipelines by curating datasets for AI/LLM model training</li>
+                <li>Automated validation tasks using Python scripts, improving QC efficiency</li>
+                <li>Collaborated with cross-functional AI and Data Engineering teams</li>
+            </ul>
+        </div>
+
+          <div class="card" style="width: 100%; max-width: none;">
+            <h3>Frontend Developer Intern</h3>
+            <p style="color: var(--primary-color); font-weight: 700; margin-bottom: 1rem;">PygenicArc</p>
+            <p><strong>Project Scope:</strong></p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li>Created frontend for educational website providing study materials to students</li>
+                <li>Built intuitive and visually appealing user interface</li>
+                <li>Applied HTML for content structuring, CSS for styling, and JavaScript for interactive elements</li>
+                <li>Enhanced website UI/UX and integrated additional learning resources</li>
+            </ul>
+            <p><strong>Outcome:</strong> Developed responsive, user-friendly frontend enhancing students' learning experiences. Selected as Student Intern for the company.</p>
+        </div>
+
+        <div class="card" style="width: 100%; max-width: none;">
+            <h3>Campus Ambassador</h3>
+            <p style="color: var(--primary-color); font-weight: 700; margin-bottom: 1rem;">E-Cell, IIT Bombay</p>
+            <p><strong>Key Achievements:</strong></p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li>Interviewed college E-Cell clubs to gain insights into club management and networking</li>
+                <li>Worked with teams on the National Entrepreneurship Challenge (NEC) initiatives</li>
+                <li>Created viable business ideas with detailed pitch decks covering customer segments and revenue streams</li>
+                <li>Registered E-Cell on the PhysicsWallah ambassador platform</li>
+                <li>Established and engaged E-Cell teams through structured recruitment processes</li>
+                <li>Designed and planned entrepreneurship workshops with promotion strategies</li>
+                <li>Participated in National Case Study competition exploring logistics and supply chain themes</li>
+            </ul>
+            <p><strong>Impact:</strong> Strengthened leadership, event management, and networking skills while fostering an entrepreneurial culture on campus.</p>
+        </div>
+
+      
+        <div class="card" style="width: 100%; max-width: none;">
+            <h3>Project Management Intern</h3>
+            <p style="color: var(--primary-color); font-weight: 700; margin-bottom: 1rem;">RitikaYourHealthCoach</p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li>Manage and schedule social media content for consistent engagement</li>
+                <li>Quality checking and issue tracking for website under development</li>
+                <li>Coordinate with development team to resolve bugs and UI/UX issues</li>
+                <li>Assist with social media strategies and content planning</li>
+                <li>Support project timelines and team coordination</li>
+                <li>Analyze social media data to improve engagement strategies</li>
+            </ul>
+            <p><strong>Skills Developed:</strong> Project management and digital marketing expertise in health-focused organization.</p>
+        </div>
+
+        <div class="card" style="width: 100%; max-width: none;">
+            <h3>Python Development Intern</h3>
+            <p style="color: var(--primary-color); font-weight: 700; margin-bottom: 1rem;">Pinnacle Labs</p>
+            <p><strong>Projects Completed:</strong></p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li>Alarm program in Python with customizable tones and snooze options</li>
+                <li>Monthly calendar app with reminder management functionality</li>
+                <li>Quiz platform with customizable quizzes, scoring, and user-friendly interface</li>
+            </ul>
+            <p><strong>Focus:</strong> Practical Python application development suitable for educational and entertainment use.</p>
+        </div>
+
+        <div class="card" style="width: 100%; max-width: none;">
+            <h3>Teaching Intern through NSS</h3>
+            <p style="color: var(--primary-color); font-weight: 700; margin-bottom: 1rem;">Government School, Gottigere, Bangalore</p>
+            <p><strong>Responsibilities:</strong></p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li>Assisted in teaching science lab experiments to school students</li>
+                <li>Inspired curiosity and practical skills in learners</li>
+                <li>Fostered students' understanding of scientific concepts through hands-on learning</li>
+            </ul>
+            <p><strong>Impact:</strong> Enhanced overall educational experience and contributed to student development through practical, engaging teaching methods.</p>
+        </div>
+    </div>
+</section>
+<section id="certifications" class="hidden slide-in-right">
+    <h2 class="interactive">Notable Certifications</h2>
+    <div class="card-grid">
+        <div class="card"  style="max-width: 1500px;">
+    <ul>
+        <li><strong>Azure Fundamentals (AZ-900):</strong> Microsoft Azure certification validating foundational cloud knowledge and Azure services (2025)</li>
+        <li><strong>Azure Databricks & Apache Spark Training:</strong> Virtual training program covering Databricks platform, Apache Spark, and data engineering workflows (2025)</li>
+        <li><strong>Dashboard in a Day - Power BI Training:</strong> Microsoft Power BI intensive training for creating professional dashboards and data visualizations (2025)</li>
+        <li><strong>GitHub Foundations:</strong> GitHub certification covering version control, collaboration, and GitHub platform fundamentals (2025)</li>
+        <!-- <li><strong>Databricks Certified Associate Developer for Apache Spark:</strong> Professional certification validating expertise in Apache Spark development and optimization (2025)</li> -->
+        <li><strong>Hands-on Workshop:</strong> IoT using Blynk and Firebase Cloud (8-07-2023 to 9-07-2023)</li>
+        <li><strong>Seminar:</strong> IPR Literacy for Academia and Research Institutions (27-07-2023)</li>
+        <li><strong>Participation:</strong> Strategy Formulation and Data Visualization, IIT Madras</li>
+        <li><strong>Internship Project Winner:</strong> Educational website development at PygenicArc</li>
+        <li><strong>Virtual Internship:</strong> Python Development Course at Pinnacle Labs</li>
+    </ul></div></div>
+</section>
+
+<section id="achievements" class="hidden slide-in-left">
+    <h2 class="interactive">Certifications</h2>
+    <div class="card-grid" style="margin-top: 3rem;">
+        <img src="AZ-900-Fundamentals.jpg" width="500" height="300" style="border-radius: 12px; box-shadow: var(--card-shadow);">
+        <img src="Azure-Databricks-RLHF.jpg" width="500" height="300" style="border-radius: 12px; box-shadow: var(--card-shadow);">
+        <img src="Power-BI-Training.jpg" width="500" height="300" style="border-radius: 12px; box-shadow: var(--card-shadow);">
+        <img src="GitHub-Foundations.jpg" width="500" height="300" style="border-radius: 12px; box-shadow: var(--card-shadow);">
+        <img src="Databricks-Developer-Associate.jpg" width="500" height="300" style="border-radius: 12px; box-shadow: var(--card-shadow);">
+        <img src="Pinnacle.png" width="500" height="300" style="border-radius: 12px; box-shadow: var(--card-shadow);">
+        <img src="Pygenicarc.jpg" width="400" height="300" style="border-radius: 12px; box-shadow: var(--card-shadow);">
+        <!-- <img src="Screenshot (337).png" width="500" height="300" style="border-radius: 12px; box-shadow: var(--card-shadow);"> -->
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="hidden slide-in-left">
+        <h2 class="interactive">Get In Touch</h2>
+        <div class="card" style="max-width: 1000px; text-align: center;">
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;"><strong>Email:</strong> <a href="mailto:ananyashetty.works@gmail.com">ananyabshetty27228@gmail.com</a></p>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;"><strong>Phone:</strong> <a href="tel:+919880919663">+91 9880919663</a></p>
+            <p style="font-size: 1.1rem;"><strong>Connect On:</strong> <a href="https://www.linkedin.com/in/ananya-b-shetty-8a9676241" target="_blank">LinkedIn</a> | <a href="https://www.github.com/ananyabshetty" target="_blank">GitHub</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Ananya B Shetty</p>
+    </footer>
+    <script>
+        // Custom cursor element
+        const cursor = document.createElement('div');
+        cursor.classList.add('custom-cursor');
+        document.body.appendChild(cursor);
+
+        // Update cursor position on mousemove
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.top = e.clientY + 'px';
+            cursor.style.left = e.clientX + 'px';
+        });
+
+        // Intersection Observer for Smooth Scrolling Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Observe each section for smooth entry with slide-in effects
+        document.querySelectorAll('.hidden').forEach((section, index) => {
+            if (index % 2 === 0) {
+                section.classList.add('slide-in-left');
+            } else {
+                section.classList.add('slide-in-right');
+            }
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
