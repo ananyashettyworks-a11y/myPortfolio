@@ -17,8 +17,6 @@
         :root {
             --primary-color: #02afbf;
             --secondary-color: #028a98;
-            --accent-color: #0d7a87;
-            --light-bg: #f8f9fa;
             --card-shadow: 0 10px 30px rgba(2, 175, 191, 0.15);
             --text-dark: #2c3e50;
             --text-light: #555;
@@ -41,28 +39,28 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        .custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(0, 136, 204, 0.7); /* Customize color */
-    border-radius: 50%;
-    pointer-events: none;
-    transition: transform 0.15s ease, width 0.15s ease, height 0.15s ease;
-    z-index: 9999;
-    mix-blend-mode: difference; /* Adds a contrast effect */
-}
 
-/* Scale up the cursor on hover over interactive elements */
-a:hover ~ .custom-cursor, 
-button:hover ~ .custom-cursor {
-    transform: scale(1.5);
-    background-color: rgba(4, 2, 0, 0.8); /* Optional color change */
-    width: 25px;
-    height: 25px;
-}
+        .custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(0, 136, 204, 0.7);
+            border-radius: 50%;
+            pointer-events: none;
+            transition: transform 0.15s ease, width 0.15s ease, height 0.15s ease;
+            z-index: 9999;
+            mix-blend-mode: difference;
+        }
+
+        a:hover ~ .custom-cursor,
+        button:hover ~ .custom-cursor {
+            transform: scale(1.5);
+            background-color: rgba(4, 2, 0, 0.8);
+            width: 25px;
+            height: 25px;
+        }
         /* Header Section */
         header {
             height: 100vh;
@@ -178,36 +176,6 @@ button:hover ~ .custom-cursor {
             justify-content: center;
             gap: 2rem;
         }
-  
-/* Card Style for Consistency */
-
-
-.card-image {
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-
-        /* About Me Content */
-        .about-content p {
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            color: #000000;
-        }
-        #about .about-card {
-    background-color: white;
-    padding: 50px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px; /* Optional: limits the width */
-    margin: 0 auto; /* Center the card */
-}
-
-#about .about-content p {
-    color: black; /* Ensure text is visible on the white background */
-}
 
 
         /* Footer */
@@ -249,7 +217,6 @@ button:hover ~ .custom-cursor {
             text-align: left;
             font-size: 1.05rem;
             color: white;
-            /* color: var(--text-dark); */
         }
 
         .skills-table th {
@@ -277,21 +244,20 @@ button:hover ~ .custom-cursor {
             border-bottom: none;
         }
 
-/* List Styles */
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 1rem 0;
-}
+        /* List Styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
 
-ul li {
-    margin: 0.8rem 0;
-    line-height: 1.8;
-    color: var(--text-dark);
-}
+        ul li {
+            margin: 0.8rem 0;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
 
-
-section {
+        section {
             padding: 5rem 2rem;
             max-width: 1100px;
             margin: 0 auto;
@@ -327,15 +293,20 @@ section {
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures video covers the entire screen */
+            object-fit: cover;
             z-index: -1;
         }
-        header, footer,  h1, h2 {
-    color: #ffffff !important;
-}
-.card ul {
-    color: black;
-}
+
+        header,
+        footer,
+        h1,
+        h2 {
+            color: #ffffff !important;
+        }
+
+        .card ul {
+            color: black;
+        }
 
         /* Enhanced Profile Summary Section */
         #about .about-card {
@@ -458,7 +429,7 @@ section {
         }
 
         #about .about-content p {
-            color: var(--text-light);
+            color: var(--text-dark);
             line-height: 1.95;
             margin-bottom: 1.5rem;
             text-align: justify;
@@ -524,39 +495,336 @@ section {
             box-shadow: 0 15px 40px rgba(2, 175, 191, 0.25);
         }
 
-        /* Responsive improvements */
-        @media (max-width: 768px) {
-            section {
-                padding: 3rem 1rem;
+        /* ===== COMPREHENSIVE RESPONSIVE DESIGN ===== */
+
+        /* Extra Small Devices (Mobile Phones - 320px to 480px) */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
             }
 
-            section h2 {
-                font-size: 2rem;
+            header {
+                height: 80vh;
+                padding: 2rem 1rem;
+            }
+
+            .profile-pic img {
+                width: 200px;
+                height: 200px;
             }
 
             header h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
+                margin-top: 1rem;
             }
 
             header h3 {
-                font-size: 1.1rem;
+                font-size: 0.9rem;
+                margin-top: 0.5rem;
+            }
+
+            section {
+                padding: 2rem 1rem;
+                max-width: 100%;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            section h2:after {
+                width: 60px;
             }
 
             .card {
                 max-width: 100%;
-                margin: 1rem 0;
+                padding: 1.5rem;
+                margin: 0.5rem 0;
+            }
+
+            .card-grid {
+                gap: 1rem;
+                flex-direction: column;
+            }
+
+            .skills-table {
+                margin: 1rem auto;
             }
 
             .skills-table th,
             .skills-table td {
-                padding: 0.8rem;
+                padding: 0.6rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            #about .about-card {
+                padding: 1.5rem;
+                margin: 1rem auto;
+            }
+
+            #about .about-content h3 {
+                font-size: 1.2rem;
+                margin-top: 1.5rem;
+            }
+
+            #about .about-content ul li {
+                font-size: 0.95rem;
+                padding-left: 25px;
+            }
+
+            #about .about-content > p:first-child {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+
+            a {
+                font-size: 0.95rem;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .custom-cursor {
+                display: none;
+            }
+        }
+
+        /* Small Devices (Tablets & Landscape Phones - 481px to 768px) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
+
+            header {
+                height: 85vh;
+                padding: 2rem 1.5rem;
+            }
+
+            .profile-pic img {
+                width: 240px;
+                height: 240px;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+                margin-top: 1.2rem;
+            }
+
+            header h3 {
+                font-size: 1rem;
+                margin-top: 0.6rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+                max-width: 100%;
+            }
+
+            section h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .card {
+                max-width: 100%;
+                padding: 2rem;
+                margin: 0.8rem 0;
+            }
+
+            .card-grid {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+            }
+
+            .skills-table th,
+            .skills-table td {
+                padding: 1rem;
                 font-size: 0.95rem;
             }
 
             #about .about-card {
                 padding: 2rem;
+                margin: 1.5rem auto;
+                max-width: 90%;
+            }
+
+            #about .about-content h3 {
+                font-size: 1.3rem;
+                margin-top: 1.8rem;
+            }
+
+            #about .about-content ul li {
+                font-size: 0.98rem;
+            }
+
+            #about .about-content > p:first-child {
+                font-size: 1.1rem;
+                padding: 1.5rem;
             }
         }
+
+        /* Medium Devices (Tablets & Small Laptops - 769px to 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            header {
+                height: 90vh;
+            }
+
+            .profile-pic img {
+                width: 260px;
+                height: 260px;
+            }
+
+            header h1 {
+                font-size: 3rem;
+            }
+
+            header h3 {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 4rem 2rem;
+                max-width: 95%;
+            }
+
+            section h2 {
+                font-size: 2.4rem;
+            }
+
+            .card {
+                max-width: 380px;
+            }
+
+            .skills-table th,
+            .skills-table td {
+                padding: 1.2rem 1.3rem;
+                font-size: 1rem;
+            }
+
+            #about .about-card {
+                padding: 2.5rem;
+                max-width: 85%;
+            }
+
+            .card-grid {
+                gap: 1.8rem;
+            }
+        }
+
+        /* Large Devices (Desktop - 1025px to 1440px) */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            section {
+                padding: 4.5rem 2.5rem;
+                max-width: 1000px;
+            }
+
+            section h2 {
+                font-size: 2.6rem;
+            }
+
+            .card {
+                max-width: 400px;
+            }
+
+            #about .about-card {
+                max-width: 900px;
+            }
+        }
+
+        /* Extra Large Devices (Large Desktops - 1441px+) */
+        @media (min-width: 1441px) {
+            section {
+                max-width: 1200px;
+            }
+
+            .card {
+                max-width: 450px;
+            }
+        }
+
+        /* Landscape orientation adjustments */
+        @media (orientation: landscape) and (max-height: 600px) {
+            header {
+                height: auto;
+                padding: 2rem 1rem;
+                min-height: 100vh;
+            }
+
+            .profile-pic img {
+                width: 150px;
+                height: 150px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header h3 {
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* Touch device adjustments */
+        @media (hover: none) and (pointer: coarse) {
+            .card:hover {
+                transform: none;
+                box-shadow: var(--card-shadow);
+            }
+
+            a::after {
+                display: none;
+            }
+
+            img:hover {
+                transform: none;
+            }
+
+            .custom-cursor {
+                display: none;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .custom-cursor,
+            .video-background {
+                display: none;
+            }
+
+            body {
+                background: white;
+                animation: none;
+                cursor: auto;
+            }
+
+            section {
+                page-break-inside: avoid;
+                box-shadow: none;
+            }
+
+            .card {
+                page-break-inside: avoid;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            }
+
+            a {
+                text-decoration: underline;
+                color: #0066cc;
+            }
+        }
+
 
     </style>
 </head>
@@ -574,21 +842,7 @@ section {
         <h3>Web Developer | Data Analyst | Project Manager | Enthusiast Learner</h3>
     </header>
 
-        <!-- Resume Section -->
-    <section id="resume" class="hidden slide-in-left">
-        <h2 class="interactive">Resume</h2>
-        <div class="card-grid" style="flex-direction: column; align-items: center; gap: 2rem;">
-            <div class="card" style="max-width: 800px; text-align: center; width: 100%;">
-                <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Download My Resume</h3>
-                <p style="color: var(--text-dark); margin-bottom: 1.5rem; font-size: 1.05rem;">
-                    Download my complete professional resume in PDF format. My resume includes my education, technical skills, professional experience, certifications, and key achievements.
-                </p>
-                <a href="AnanyaShetty_RESUME.pdf" download="AnanyaShetty_RESUME.pdf" style="display: inline-block; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border-radius: 12px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; text-decoration: none; box-shadow: 0 10px 30px rgba(2, 175, 191, 0.3);">
-                    📥 Download Resume (PDF)
-                </a>
-            </div>
-        </div>
-    </section>
+
 
     <!-- About Me Section -->
      
@@ -875,13 +1129,31 @@ section {
     </div>
 </section>
 
+        <!-- Resume Section -->
+    <section id="resume" class="hidden slide-in-left">
+        <h2 class="interactive">Resume</h2>
+        <div style="display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+            <div class="card" style="max-width: 800px; text-align: center; width: 100%; margin: 0 auto;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Download My Resume</h3>
+                <p style="color: var(--text-dark); margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Download my complete professional resume in PDF format. My resume includes my education, technical skills, professional experience, certifications, and key achievements.
+                </p>
+                <a href="AnanyaShetty_RESUME.pdf" download="AnanyaShetty_RESUME.pdf" style="display: inline-block; padding: 1rem 2.5rem; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border-radius: 12px; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; text-decoration: none; box-shadow: 0 10px 30px rgba(2, 175, 191, 0.3);">
+                    📥 Download Resume (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+    
     <!-- Contact Section -->
     <section id="contact" class="hidden slide-in-left">
         <h2 class="interactive">Get In Touch</h2>
-        <div class="card" style="max-width: 1000px; text-align: center;">
-            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;"><strong>Email:</strong> <a href="mailto:ananyashetty.works@gmail.com">ananyashetty.works@gmail.com</a></p>
-            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;"><strong>Phone:</strong> <a href="tel:+919880919663">+91 9880919663</a></p>
-            <p style="font-size: 1.1rem;"><strong>Connect On:</strong> <a href="https://www.linkedin.com/in/ananya-b-shetty-8a9676241" target="_blank">LinkedIn</a> | <a href="https://www.github.com/ananyabshetty" target="_blank">GitHub</a></p>
+        <div style="display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+            <div class="card" style="max-width: 1000px; text-align: center; width: 100%; margin: 0 auto;">
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem;"><strong>Email:</strong> <a href="mailto:ananyashetty.works@gmail.com">ananyashetty.works@gmail.com</a></p>
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem;"><strong>Phone:</strong> <a href="tel:+919880919663">+91 9880919663</a></p>
+                <p style="font-size: 1.1rem;"><strong>Connect On:</strong> <a href="https://www.linkedin.com/in/ananya-b-shetty-8a9676241" target="_blank">LinkedIn</a> | <a href="https://www.github.com/ananyabshetty" target="_blank">GitHub</a></p>
+            </div>
         </div>
     </section>
 
@@ -924,4 +1196,3 @@ section {
     </script>
 </body>
 </html>
-
